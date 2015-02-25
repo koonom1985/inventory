@@ -30,14 +30,8 @@
         </action>
     </action-mappings>
     
-    <!-- <controller processorClass="org.springframework.web.struts.DelegatingRequestProcessor"/> -->
     <controller>
     	<set-property property="processorClass" value="org.springframework.web.struts.AutowiringRequestProcessor" />
 	</controller>
     
-    <!-- Spring Struts plugin -->
- 	<!-- <plug-in className="org.springframework.web.struts.ContextLoaderPlugIn">
-		<set-property property="contextConfigLocation"
-			value="/WEB-INF/classes/SpringBeans.xml" />
-  	</plug-in> -->
 </struts-config>
