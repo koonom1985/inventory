@@ -34,4 +34,5 @@
     	<set-property property="processorClass" value="org.springframework.web.struts.AutowiringRequestProcessor" />
 	</controller>
     
+    <message-resources parameter="message" />
 </struts-config>

@@ -4,6 +4,12 @@
       version="2.4">
     <display-name>LoginFormStruts</display-name>
     
+    <!-- Define the basename for a resource bundle for I18N -->
+	<context-param>
+	    <param-name>javax.servlet.jsp.jstl.fmt.localizationContext</param-name>
+	    <param-value>ApplicationResources</param-value>
+	</context-param>
+    
     <listener>
     	<listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
     </listener>
