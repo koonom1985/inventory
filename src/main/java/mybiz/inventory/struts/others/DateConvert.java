@@ -7,7 +7,7 @@ import java.util.Date;
 import org.apache.commons.beanutils.Converter;
 
 public class DateConvert implements Converter {
-	private final static String pattern = "yyyy-MM-dd";
+	private final static String pattern = "MM/dd/yyyy";
 	public Object convert(Class type, Object value) {
 		if(value == null){  
             return (null);  

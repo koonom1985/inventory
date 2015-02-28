@@ -1,13 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
+<%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://displaytag.sf.net" prefix="display" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <html:html>
 <fmt:setBundle basename="message"/>
 	<head>
+		<meta charset="utf-8">
         <title>List product in inventory</title>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
+		<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+		<script src="//code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
+		<script>
+		$(function() {$("input[name='itemIn.purchaseDatetime']").datepicker();});
+		</script>
     </head>
     <body>
     	<div align="center">
@@ -50,7 +58,7 @@
     	
     	<div align="center">
     	<fieldset  style="width: 60%;">
-    	<legend> List Item </legend>
+    	<legend> <fmt:message key="title.list.item"/> </legend>
     	<display:table export="true" id="itemdata" name="requestScope.rlist" requestURI="/list.do" pagesize="10" cellpadding="5px;">
     	<display:column property="code" titleKey="label.code" sortable="true"/>
     	<display:column property="name" titleKey="label.name" sortable="true"/>
@@ -60,11 +68,13 @@
     	<display:column property="purchaseSize" titleKey="label.purchase.size" sortable="true"/>
     	<display:column property="address" titleKey="label.address" sortable="false"/>
     	<display:column property="telephone" titleKey="label.telephone" sortable="true"/>
-    	<display:column titleKey="label.common.button.update.or.delete" sortable="false">
-    		<html:button property="">
+    	<display:column titleKey="label.common.button.update" sortable="false">
+    		<html:link action="/update.do" paramName="itemdata" paramId="itemInId" paramProperty="itemInId">
     			<fmt:message key="label.common.button.update"/>
-    		</html:button>
-    		<html:link action="/delete.do" paramName="itemInId" property="itemInId" paramProperty="itemInId">
+    		</html:link>
+    	</display:column>
+    	<display:column titleKey="label.common.button.delete" sortable="false">
+    		<html:link action="/delete.do" paramName="itemdata" paramId="itemInId" paramProperty="itemInId">
     			<fmt:message key="label.common.button.delete"/>
     		</html:link>
     	</display:column>
