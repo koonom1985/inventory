@@ -10,9 +10,9 @@
 	<head>
 		<meta charset="utf-8">
         <title>List product in inventory</title>
-        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
-		<script src="//code.jquery.com/jquery-1.10.2.js"></script>
-		<script src="//code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
+        <link rel="stylesheet" href="/jquery-ui.css">
+		<script src="/jquery.js"></script>
+		<script src="/jquery-ui.js"></script>
 		<script>
 		$(function() {$("input[name='itemIn.purchaseDatetime']").datepicker();});
 		</script>
@@ -69,12 +69,12 @@
     	<display:column property="address" titleKey="label.address" sortable="false"/>
     	<display:column property="telephone" titleKey="label.telephone" sortable="true"/>
     	<display:column titleKey="label.common.button.update" sortable="false">
-    		<html:link action="/update.do" paramName="itemdata" paramId="itemInId" paramProperty="itemInId">
+    		<html:link action="/update.do" paramName="itemdata" paramId="id" paramProperty="itemInId">
     			<fmt:message key="label.common.button.update"/>
     		</html:link>
     	</display:column>
     	<display:column titleKey="label.common.button.delete" sortable="false">
-    		<html:link action="/delete.do" paramName="itemdata" paramId="itemInId" paramProperty="itemInId">
+    		<html:link action="/delete.do" paramName="itemdata" paramId="id" paramProperty="itemInId">
     			<fmt:message key="label.common.button.delete"/>
     		</html:link>
     	</display:column>

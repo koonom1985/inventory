@@ -4,7 +4,7 @@
 <!-- Generated 2015-2-14 12:51:33 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
     <class name="mybiz.inventory.model.ItemIn" table="ITEM_IN">
-        <id name="itemInId" type="int">
+        <id name="itemInId" type="long">
             <column name="ITEM_IN_ID" />
             <generator class="identity" />
         </id>

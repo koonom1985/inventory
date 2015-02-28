@@ -11,7 +11,7 @@ import java.util.Date;
 public class ItemSell implements java.io.Serializable {
 
 	private static final long serialVersionUID = 1L;
-	private int itemSellId;
+	private long itemSellId;
 	private Integer itemSellItemInId;
 	private Integer sellSiez;
 	private BigDecimal sellPrice;
@@ -38,11 +38,11 @@ public class ItemSell implements java.io.Serializable {
 		this.sellTelphone = sellTelphone;
 	}
 
-	public int getItemSellId() {
+	public long getItemSellId() {
 		return this.itemSellId;
 	}
 
-	public void setItemSellId(int itemSellId) {
+	public void setItemSellId(long itemSellId) {
 		this.itemSellId = itemSellId;
 	}
 

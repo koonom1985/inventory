@@ -11,7 +11,7 @@ import java.util.Date;
 public class ItemIn implements java.io.Serializable {
 
 	private static final long serialVersionUID = 1L;
-	private int itemInId;
+	private long itemInId;
 	private String code;
 	private String name;
 	private BigDecimal purcahasPrice;
@@ -43,11 +43,11 @@ public class ItemIn implements java.io.Serializable {
 		this.isTrans = isTrans;
 	}
 
-	public int getItemInId() {
+	public long getItemInId() {
 		return this.itemInId;
 	}
 
-	public void setItemInId(int itemInId) {
+	public void setItemInId(long itemInId) {
 		this.itemInId = itemInId;
 	}
 

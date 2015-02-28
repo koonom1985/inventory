@@ -15,7 +15,19 @@ public class ItemService {
 		itemDAO.save(itemin);
 	}
 	
+	public void upadteItemIn(ItemIn itemin) {
+		itemDAO.update(itemin);
+	}
+	
 	public List<ItemIn> findAllItemIn() {
 		return itemDAO.findAllItemIn();
+	}
+	
+	public List<ItemIn> findItemInById(long id) {
+		return itemDAO.findItemInById(id);
+	}
+	
+	public void deleteItemIn(long id) {
+		itemDAO.deleteItemItById(id);
 	}
 }
