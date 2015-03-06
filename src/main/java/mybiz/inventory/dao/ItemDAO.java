@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import mybiz.inventory.model.ItemIn;
+import mybiz.inventory.model.ItemSell;
 
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
@@ -11,6 +12,10 @@ public class ItemDAO extends HibernateDaoSupport {
 
 	public void save(ItemIn itemin) {
 		getHibernateTemplate().save(itemin);
+	}
+	
+	public void save(ItemSell itemsell) {
+		getHibernateTemplate().save(itemsell);
 	}
 	
 	public void update(ItemIn itemin) {

@@ -4,6 +4,7 @@ import java.util.List;
 
 import mybiz.inventory.dao.ItemDAO;
 import mybiz.inventory.model.ItemIn;
+import mybiz.inventory.model.ItemSell;
 
 public class ItemService {
 	private ItemDAO itemDAO;
@@ -13,6 +14,10 @@ public class ItemService {
 	
 	public void saveItemIn(ItemIn itemin) {
 		itemDAO.save(itemin);
+	}
+	
+	public void saveItemSell(ItemSell itemsell) {
+		itemDAO.save(itemsell);
 	}
 	
 	public void upadteItemIn(ItemIn itemin) {

@@ -12,7 +12,7 @@ public class ItemSell implements java.io.Serializable {
 
 	private static final long serialVersionUID = 1L;
 	private long itemSellId;
-	private Integer itemSellItemInId;
+	private Long itemSellItemInId;
 	private Integer sellSiez;
 	private BigDecimal sellPrice;
 	private Date sellDatetime;
@@ -26,7 +26,7 @@ public class ItemSell implements java.io.Serializable {
 		this.itemSellId = itemSellId;
 	}
 
-	public ItemSell(int itemSellId, Integer itemSellItemInId, Integer sellSiez,
+	public ItemSell(int itemSellId, Long itemSellItemInId, Integer sellSiez,
 			BigDecimal sellPrice, Date sellDatetime, String sellAddress,
 			BigDecimal sellTelphone) {
 		this.itemSellId = itemSellId;
@@ -46,11 +46,11 @@ public class ItemSell implements java.io.Serializable {
 		this.itemSellId = itemSellId;
 	}
 
-	public Integer getItemSellItemInId() {
+	public Long getItemSellItemInId() {
 		return this.itemSellItemInId;
 	}
 
-	public void setItemSellItemInId(Integer itemSellItemInId) {
+	public void setItemSellItemInId(Long itemSellItemInId) {
 		this.itemSellItemInId = itemSellItemInId;
 	}
 

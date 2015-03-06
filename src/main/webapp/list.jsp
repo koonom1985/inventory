@@ -78,6 +78,11 @@
     			<fmt:message key="label.common.button.delete"/>
     		</html:link>
     	</display:column>
+    	<display:column titleKey="label.common.button.sell" sortable="false">
+    		<html:link action="/sell.do" paramName="itemdata" paramId="id" paramProperty="itemInId">
+    			<fmt:message key="label.common.button.sell"/>
+    		</html:link>
+    	</display:column>
     	</display:table>
     	</fieldset>
     	</div>
