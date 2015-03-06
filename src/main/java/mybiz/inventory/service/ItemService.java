@@ -28,6 +28,10 @@ public class ItemService {
 		return itemDAO.findAllItemIn();
 	}
 	
+	public List<ItemSell> findAllItemSell() {
+		return itemDAO.findAllItemSell();
+	}
+	
 	public List<ItemIn> findItemInById(long id) {
 		return itemDAO.findItemInById(id);
 	}

@@ -33,6 +33,10 @@ public class ItemDAO extends HibernateDaoSupport {
 		return getHibernateTemplate().find("from ItemIn");
 	}
 	
+	public List<ItemSell> findAllItemSell() {
+		return getHibernateTemplate().find("from ItemSell");
+	}
+	
 	public List<ItemIn> findItemInByIndex(int start, int end) {
 		return getHibernateTemplate().find(
 			"from ItemIn t where t.itemInId=? and t.itemInId=?", 

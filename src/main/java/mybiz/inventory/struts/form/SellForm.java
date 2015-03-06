@@ -1,5 +1,6 @@
 package mybiz.inventory.struts.form;
 
+import mybiz.inventory.model.ItemIn;
 import mybiz.inventory.model.ItemSell;
 
 import org.apache.commons.beanutils.ConvertUtils;
@@ -14,6 +15,8 @@ public class SellForm extends ActionForm {
 		ConvertUtils.register(new mybiz.inventory.struts.others.BigDecimalConvert(), java.math.BigDecimal.class);
 	}
 	
+	private ItemIn itemIn;
+	private Long itemInId;
 	private ItemSell itemSell;
 	private boolean forSell;
 	private String token;
@@ -21,6 +24,22 @@ public class SellForm extends ActionForm {
 	public SellForm() {
 		super();
 		this.itemSell = new ItemSell();
+	}
+
+	public Long getItemInId() {
+		return itemInId;
+	}
+
+	public void setItemInId(Long itemInId) {
+		this.itemInId = itemInId;
+	}
+
+	public ItemIn getItemIn() {
+		return itemIn;
+	}
+
+	public void setItemIn(ItemIn itemIn) {
+		this.itemIn = itemIn;
 	}
 
 	public ItemSell getItemSell() {

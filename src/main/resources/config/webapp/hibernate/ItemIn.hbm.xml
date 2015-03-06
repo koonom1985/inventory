@@ -32,5 +32,12 @@
         <property name="isTrans" type="string">
             <column name="IS_TRANS" length="5" />
         </property>
+        
+        <set name="sells" table="ITEM_SELL" inverse="true" lazy="true" fetch="select">
+        	<key>
+        		<column name="ITEM_IN_ID" not-null="true"/>
+        	</key>
+        	<one-to-many class="mybiz.inventory.model.ItemSell"/>
+        </set>
     </class>
 </hibernate-mapping>

@@ -22,25 +22,69 @@
     <body>
     	<div align="center">
     	<fieldset  style="width: 60%;">
+    	<legend> Item in Inventory </legend>
+    	<html:form action="/sell">
+    	<table border="0" >
+    	<tr>
+    		<td><fmt:message key="label.code"/> : </td><td><html:text property="itemIn.code" disabled="true"/></td>
+    		<td><fmt:message key="label.name"/> : </td><td><html:text property="itemIn.name" disabled="true"/></td>
+    	</tr>
+    	<tr>
+    		<td><fmt:message key="label.istrans"/> : </td><td><html:checkbox property="itemIn.isTrans" disabled="true"/></td>
+    		<td><fmt:message key="label.address"/> : </td><td colspan="3"><html:text property="itemIn.address" size="58%" disabled="true"/></td>
+    	</tr>
+    	<tr>
+    		<td><fmt:message key="label.purchase.price"/> : </td><td><html:text property="itemIn.purcahasPrice" disabled="true"/></td>
+    		<td><fmt:message key="label.purchase.time"/> : </td>
+    		<td><html:text property="itemIn.purchaseDatetime" disabled="true"/></td>
+    		<td><fmt:message key="label.purchase.size"/> : </td><td><html:text property="itemIn.purchaseSize" disabled="true"/></td>
+    	</tr>
+    	</table>
+    	</html:form>
+    	</fieldset>
+    	</div>
+    	
+    	<div align="center">
+    	<c:forEach items="${soldList}" var="sellvar">
+    	<fieldset style="width: 60%;">
+    	<legend> Sold Item </legend>
+    	<table border="0" >
+    	<tr>
+    		<td><fmt:message key="label.sell.size"/> : </td><td><c:out value="${sellvar.sellSiez }"/></td>
+    		<td><fmt:message key="label.sell.price"/> : </td><td><c:out value="${sellvar.sellPrice }"/></td>
+    		<td><fmt:message key="label.sell.time"/> : </td>
+    		<td><c:out value="${sellvar.sellDatetime }"/></td>
+    	</tr>
+    	<tr>
+    		<td><fmt:message key="label.sell.address"/> : </td><td><c:out value="${sellvar.sellAddress }"/></td>
+    		<td><fmt:message key="label.sell.telephone"/> : </td><td><c:out value="${sellvar.sellTelphone }"/></td>
+    	</tr>
+    	</table>
+    	</fieldset>
+    	</c:forEach>
+    	</div>
+    	
+    	<div align="center">
+    	<fieldset  style="width: 60%;">
     	<legend> <fmt:message key="title.sell.item"/> </legend>
     	<html:form action="/sell">
     	<table border="0" >
     	<tr>
-    		<td><fmt:message key="label.sell.size"/> : </td><td><html:text property="itemSell.sellSiez"/></td>
-    		<td><fmt:message key="label.sell.price"/> : </td><td><html:text property="itemSell.sellPrice"/></td>
+    		<td><fmt:message key="label.sell.size"/> : </td><td><html:text property="itemSell.sellSiez" value=""/></td>
+    		<td><fmt:message key="label.sell.price"/> : </td><td><html:text property="itemSell.sellPrice" value=""/></td>
     	</tr>
     	<tr>
     		<td><fmt:message key="label.sell.time"/> : </td>
-    		<td><html:text property="itemSell.sellDatetime"/></td>
-    		<td><fmt:message key="label.sell.address"/> : </td><td><html:text property="itemSell.sellAddress"/></td>
+    		<td><html:text property="itemSell.sellDatetime" value=""/></td>
+    		<td><fmt:message key="label.sell.address"/> : </td><td><html:text property="itemSell.sellAddress" value=""/></td>
     	</tr>
     	<tr>
-    		<td><fmt:message key="label.sell.telephone"/> : </td><td><html:text property="itemSell.sellTelphone"/></td>
+    		<td><fmt:message key="label.sell.telephone"/> : </td><td><html:text property="itemSell.sellTelphone" value=""/></td>
     	</tr>
     	<tr>
     		<td>
     			<html:hidden property="forSell" value="true"/>
-    			<html:hidden property="itemSell.itemSellId"/>
+    			<html:hidden property="itemInId"/>
     			<html:submit>
     			<fmt:message key="label.common.button.add.sell" />
     			</html:submit>

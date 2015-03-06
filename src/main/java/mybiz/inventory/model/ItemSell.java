@@ -18,6 +18,8 @@ public class ItemSell implements java.io.Serializable {
 	private Date sellDatetime;
 	private String sellAddress;
 	private BigDecimal sellTelphone;
+	
+	private ItemIn itemin;
 
 	public ItemSell() {
 	}
@@ -92,6 +94,14 @@ public class ItemSell implements java.io.Serializable {
 
 	public void setSellTelphone(BigDecimal sellTelphone) {
 		this.sellTelphone = sellTelphone;
+	}
+
+	public ItemIn getItemin() {
+		return itemin;
+	}
+
+	public void setItemin(ItemIn itemin) {
+		this.itemin = itemin;
 	}
 
 }

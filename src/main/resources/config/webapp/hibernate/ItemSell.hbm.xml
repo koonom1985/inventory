@@ -3,14 +3,14 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 2015-2-14 12:51:33 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-    <class name="mybiz.inventory.model.ItemSell" table="ITEM_SELL" schema="USER">
+    <class name="mybiz.inventory.model.ItemSell" table="ITEM_SELL">
         <id name="itemSellId" type="long">
             <column name="ITEM_SELL_ID" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
-        <property name="itemSellItemInId" type="java.lang.Long">
-            <column name="ITEM_SELL_ITEM_IN_ID" />
-        </property>
+        <many-to-one name="itemin" class="mybiz.inventory.model.ItemIn" fetch="select">
+        	<column name="ITEM_SELL_ITEM_IN_ID" not-null="true"/>
+        </many-to-one>
         <property name="sellSiez" type="java.lang.Integer">
             <column name="SELL_SIEZ" precision="8" scale="0" />
         </property>
