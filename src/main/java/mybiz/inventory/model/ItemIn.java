@@ -4,6 +4,7 @@ package mybiz.inventory.model;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -22,7 +23,7 @@ public class ItemIn implements java.io.Serializable {
 	private BigDecimal telephone;
 	private String isTrans;
 	
-	private Set<ItemSell> sells;
+	private Set<ItemSell> itemSells = new HashSet<ItemSell>(0);
 
 	public ItemIn() {
 	}
@@ -118,12 +119,12 @@ public class ItemIn implements java.io.Serializable {
 		this.isTrans = isTrans;
 	}
 
-	public Set<ItemSell> getSells() {
-		return sells;
+	public Set<ItemSell> getItemSells() {
+		return itemSells;
 	}
 
-	public void setSells(Set<ItemSell> sells) {
-		this.sells = sells;
+	public void setItemSells(Set<ItemSell> itemSells) {
+		this.itemSells = itemSells;
 	}
 
 }

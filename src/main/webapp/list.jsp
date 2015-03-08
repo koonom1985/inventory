@@ -10,9 +10,9 @@
 	<head>
 		<meta charset="utf-8">
         <title>List product in inventory</title>
-        <link rel="stylesheet" href="/jquery-ui.css">
-		<script src="/jquery.js"></script>
-		<script src="/jquery-ui.js"></script>
+        <link rel="stylesheet" href="./jquery-ui.css">
+		<script src="./jquery.js"></script>
+		<script src="./jquery-ui.js"></script>
 		<script>
 		$(function() {$("input[name='itemIn.purchaseDatetime']").datepicker();});
 		</script>

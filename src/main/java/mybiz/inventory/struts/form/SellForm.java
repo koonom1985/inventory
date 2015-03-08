@@ -24,6 +24,8 @@ public class SellForm extends ActionForm {
 	public SellForm() {
 		super();
 		this.itemSell = new ItemSell();
+		this.itemIn = new ItemIn();
+		this.itemInId = 0l;
 	}
 
 	public Long getItemInId() {

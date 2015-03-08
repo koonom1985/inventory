@@ -3,14 +3,15 @@
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jstl/fmt" prefix="fmt" %>
+<%@ taglib uri="http://displaytag.sf.net" prefix="display" %>
 <html:html>
 <fmt:setBundle basename="message"/>
 	<head>
 		<meta charset="utf-8">
         <title>Sell Item</title>
-        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
-		<script src="//code.jquery.com/jquery-1.10.2.js"></script>
-		<script src="//code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
+        <link rel="stylesheet" href="./jquery-ui.css">
+		<script src="./jquery.js"></script>
+		<script src="./jquery-ui.js"></script>
 		<script>
 		$(function() {$("input[name='itemSell.sellDatetime']").datepicker();});
 		var hasprompt = '<%= pageContext.getRequest().getAttribute("prompt.message") %>' ;
@@ -42,26 +43,6 @@
     	</table>
     	</html:form>
     	</fieldset>
-    	</div>
-    	
-    	<div align="center">
-    	<c:forEach items="${soldList}" var="sellvar">
-    	<fieldset style="width: 60%;">
-    	<legend> Sold Item </legend>
-    	<table border="0" >
-    	<tr>
-    		<td><fmt:message key="label.sell.size"/> : </td><td><c:out value="${sellvar.sellSiez }"/></td>
-    		<td><fmt:message key="label.sell.price"/> : </td><td><c:out value="${sellvar.sellPrice }"/></td>
-    		<td><fmt:message key="label.sell.time"/> : </td>
-    		<td><c:out value="${sellvar.sellDatetime }"/></td>
-    	</tr>
-    	<tr>
-    		<td><fmt:message key="label.sell.address"/> : </td><td><c:out value="${sellvar.sellAddress }"/></td>
-    		<td><fmt:message key="label.sell.telephone"/> : </td><td><c:out value="${sellvar.sellTelphone }"/></td>
-    	</tr>
-    	</table>
-    	</fieldset>
-    	</c:forEach>
     	</div>
     	
     	<div align="center">
@@ -97,6 +78,30 @@
     	</tr>
     	</table>
     	</html:form>
+    	</fieldset>
+    	</div>
+    	
+    	<div align="center">
+    	<fieldset  style="width: 60%;">
+    	<legend> <fmt:message key="title.list.sell.item"/> </legend>
+    	<display:table export="true" id="selldata" name="requestScope.slist" requestURI="/sell.do" pagesize="10" cellpadding="5px;">
+    	<display:column property="itemIn.itemInId" titleKey="label.code" sortable="false"/>
+    	<display:column property="sellSiez" titleKey="label.sell.size" sortable="true"/>
+    	<display:column property="sellPrice" titleKey="label.sell.price" sortable="false"/>
+    	<display:column property="sellDatetime" titleKey="label.sell.time" sortable="true"/>
+    	<display:column property="sellAddress" titleKey="label.sell.address" sortable="true"/>
+    	<display:column property="sellTelphone" titleKey="label.sell.telephone" sortable="true"/>
+    	<display:column titleKey="label.common.button.update" sortable="false">
+    		<html:link action="/update.do" paramName="selldata" paramId="id" paramProperty="itemSellId">
+    			<fmt:message key="label.common.button.update"/>
+    		</html:link>
+    	</display:column>
+    	<display:column titleKey="label.common.button.delete" sortable="false">
+    		<html:link action="/deleteSell.do" paramName="selldata" paramId="id" paramProperty="itemSellId">
+    			<fmt:message key="label.common.button.delete"/>
+    		</html:link>
+    	</display:column>
+    	</display:table>
     	</fieldset>
     	</div>
     </body>

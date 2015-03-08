@@ -8,7 +8,7 @@
             <column name="ITEM_SELL_ID" />
             <generator class="identity" />
         </id>
-        <many-to-one name="itemin" class="mybiz.inventory.model.ItemIn" fetch="select">
+        <many-to-one name="itemIn" class="mybiz.inventory.model.ItemIn" fetch="select">
         	<column name="ITEM_SELL_ITEM_IN_ID" not-null="true"/>
         </many-to-one>
         <property name="sellSiez" type="java.lang.Integer">

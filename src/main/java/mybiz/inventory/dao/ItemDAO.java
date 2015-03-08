@@ -29,12 +29,25 @@ public class ItemDAO extends HibernateDaoSupport {
 		return list;
 	}
 	
+	public List<ItemSell> findItemSellById(long id) {
+		ItemSell item = (ItemSell) getHibernateTemplate().get(ItemSell.class, id);
+		List<ItemSell> list = new ArrayList<ItemSell>();
+		list.add(item);
+		return list;
+	}
+	
 	public List<ItemIn> findAllItemIn() {
 		return getHibernateTemplate().find("from ItemIn");
 	}
 	
 	public List<ItemSell> findAllItemSell() {
 		return getHibernateTemplate().find("from ItemSell");
+	}
+	
+	public List<ItemSell> findAllItemSellByItemInId(ItemIn itemin) {
+		return getHibernateTemplate().find(
+			"from ItemSell t where t.itemIn=?", 
+			new Object[]{itemin});
 	}
 	
 	public List<ItemIn> findItemInByIndex(int start, int end) {
@@ -45,6 +58,11 @@ public class ItemDAO extends HibernateDaoSupport {
 	
 	public void deleteItemItById(long id) {
 		ItemIn entity = (ItemIn) getHibernateTemplate().load(ItemIn.class, id);
+		getHibernateTemplate().delete(entity);
+	}
+	
+	public void deleteItemSellById(long id) {
+		ItemSell entity = (ItemSell) getHibernateTemplate().load(ItemSell.class, id);
 		getHibernateTemplate().delete(entity);
 	}
 }

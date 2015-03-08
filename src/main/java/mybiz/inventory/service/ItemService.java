@@ -32,11 +32,23 @@ public class ItemService {
 		return itemDAO.findAllItemSell();
 	}
 	
+	public List<ItemSell> findAllItemSellByItemIn(ItemIn itemin) {
+		return itemDAO.findAllItemSellByItemInId(itemin);
+	}
+	
 	public List<ItemIn> findItemInById(long id) {
 		return itemDAO.findItemInById(id);
 	}
 	
+	public List<ItemSell> findItemSellById(long id) {
+		return itemDAO.findItemSellById(id);
+	}
+	
 	public void deleteItemIn(long id) {
 		itemDAO.deleteItemItById(id);
+	}
+	
+	public void deleteItemSell(long id) {
+		itemDAO.deleteItemSellById(id);
 	}
 }

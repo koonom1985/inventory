@@ -6,6 +6,7 @@ import mybiz.inventory.model.ItemIn;
 
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class ItemDAOTest {
@@ -17,7 +18,7 @@ public class ItemDAOTest {
 		testClass.setSessionFactory(HibernateUtil.getSessionFactory());
 	}
 	
-	@Test
+	@Ignore
 	public void testFindAllItemIn() {
 		List<ItemIn> results = testClass.findAllItemIn();
 		Assert.assertEquals("should has size", results.size(), 0);

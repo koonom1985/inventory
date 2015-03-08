@@ -19,7 +19,7 @@ public class ItemSell implements java.io.Serializable {
 	private String sellAddress;
 	private BigDecimal sellTelphone;
 	
-	private ItemIn itemin;
+	private ItemIn itemIn;
 
 	public ItemSell() {
 	}
@@ -96,12 +96,12 @@ public class ItemSell implements java.io.Serializable {
 		this.sellTelphone = sellTelphone;
 	}
 
-	public ItemIn getItemin() {
-		return itemin;
+	public ItemIn getItemIn() {
+		return itemIn;
 	}
 
-	public void setItemin(ItemIn itemin) {
-		this.itemin = itemin;
+	public void setItemIn(ItemIn itemIn) {
+		this.itemIn = itemIn;
 	}
 
 }

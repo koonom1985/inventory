@@ -35,9 +35,14 @@
         	type="mybiz.inventory.struts.action.DeleteAction" scope="request">
         	<forward name="list" path="/list.do" redirect="true" />
         </action>
-        <action name="sellForm" path="/sell"
+        <action name="sellForm" path="/sell" cancellable="true"
         	type="mybiz.inventory.struts.action.SellAction" scope="request">
         	<forward name="sell" path="/sell.jsp" redirect="false" />
+        	<forward name="cancel" path="/list.do" redirect="true" />
+        </action>
+        <action name="deleteSellForm" path="/deleteSell"
+        	type="mybiz.inventory.struts.sell.action.DeleteAction" scope="request">
+        	<forward name="sell" path="/sell.do" redirect="true" />
         	<forward name="list" path="/list.do" redirect="true" />
         </action>
     </action-mappings>

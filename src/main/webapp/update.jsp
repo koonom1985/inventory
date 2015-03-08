@@ -8,9 +8,9 @@
 	<head>
 		<meta charset="utf-8">
         <title>Update ItemIn</title>
-        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
-		<script src="//code.jquery.com/jquery-1.10.2.js"></script>
-		<script src="//code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
+        <link rel="stylesheet" href="./jquery-ui.css">
+		<script src="./jquery.js"></script>
+		<script src="./jquery-ui.js"></script>
 		<script>
 		$(function() {$("input[name='itemIn.purchaseDatetime']").datepicker();});
 		var hasprompt = '<%= pageContext.getRequest().getAttribute("prompt.message") %>' ;
