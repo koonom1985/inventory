@@ -31,6 +31,11 @@
 		<script src="./jquery.cascadingdropdown.js"></script>
 		<script type="text/javascript">
 		$(function() {$("input[name='itemIn.purchaseDatetime']").datepicker();});
+		function onSell() {
+			$("input[id=issell]:checked").each(function(){
+				alert(this.value);
+			});
+		};
 		$(function() {
 		$('#componentsfinder').cascadingDropdown({
 			selectBoxes: [
@@ -137,9 +142,13 @@
     	<fieldset  style="width: 60%;">
     	<legend> <fmt:message key="title.list.item"/> </legend>
     	<display:table export="true" id="itemdata" name="requestScope.rlist" requestURI="/list.do" pagesize="10" cellpadding="5px;">
-    	<display:column property="code" titleKey="label.code" sortable="true"/>
+    	<display:column titleKey="label.code" sortable="false">
+    		<input type="checkbox" id="issell" value="<c:out value='${itemdata.itemInId }' />"/>
+    	</display:column>
     	<display:column property="name" titleKey="label.name" sortable="true"/>
-    	<display:column property="isTrans" titleKey="label.istrans" sortable="false"/>
+    	<display:column titleKey="label.istrans" sortable="false">
+    		<html:checkbox name="itemdata" property="isTrans" disabled="true"/>
+    	</display:column>
     	<display:column property="purcahasPrice" titleKey="label.purchase.price" sortable="true"/>
     	<display:column property="purchaseDatetime" titleKey="label.purchase.time" sortable="true"/>
     	<display:column property="purchaseSize" titleKey="label.purchase.size" sortable="true"/>
@@ -155,13 +164,11 @@
     			<fmt:message key="label.common.button.delete"/>
     		</html:link>
     	</display:column>
-    	<display:column titleKey="label.common.button.sell" sortable="false">
-    		<html:link action="/sell.do" paramName="itemdata" paramId="id" paramProperty="itemInId">
-    			<fmt:message key="label.common.button.sell"/>
-    		</html:link>
-    	</display:column>
     	</display:table>
     	</fieldset>
+	    	<div>
+	    		<button onclick="onSell();"><fmt:message key="label.common.button.sell"/></button>
+	    	</div>
     	</div>
     </body>
 </html:html>
