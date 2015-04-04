@@ -82,9 +82,15 @@
 			]
 		});
 	});
-		</script>
+	function onSell() {
+		//alert("do on sell...");
+		//var sellMutipleForm = document.getElementByName('sellMutipleForm');
+		//alert('sellMutipleForm:'+sellMutipleForm);
+	}
+	</script>
     </head>
     <body>
+    <h2><%=System.getProperty("path.separator")%></h2>
     	<div align="center">
     	<fieldset  style="width: 80%;">
     	<legend> <fmt:message key="title.add.item"/> </legend>
@@ -139,11 +145,12 @@
     	<div style="margin: 20px;"></div>
     	
     	<div align="center">
+    	<html:form action="/sellmutiple">
     	<fieldset  style="width: 60%;">
     	<legend> <fmt:message key="title.list.item"/> </legend>
     	<display:table export="true" id="itemdata" name="requestScope.rlist" requestURI="/list.do" pagesize="10" cellpadding="5px;">
     	<display:column titleKey="label.code" sortable="false">
-    		<input type="checkbox" id="issell" value="<c:out value='${itemdata.itemInId }' />"/>
+    		<input type="checkbox" name="sellids" id="issell" value="<c:out value='${itemdata.itemInId }' />"/>
     	</display:column>
     	<display:column property="name" titleKey="label.name" sortable="true"/>
     	<display:column titleKey="label.istrans" sortable="false">
@@ -164,11 +171,17 @@
     			<fmt:message key="label.common.button.delete"/>
     		</html:link>
     	</display:column>
+    	<display:column titleKey="label.common.button.sell" sortable="false">
+			<html:link action="/sell.do" paramName="itemdata" paramId="id" paramProperty="itemInId">
+			<fmt:message key="label.common.button.sell"/>
+			</html:link>
+		</display:column>
     	</display:table>
     	</fieldset>
 	    	<div>
 	    		<button onclick="onSell();"><fmt:message key="label.common.button.sell"/></button>
 	    	</div>
+	    	</html:form>
     	</div>
     </body>
 </html:html>

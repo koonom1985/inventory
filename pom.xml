@@ -11,6 +11,8 @@
 	<properties>
 		<struts.version>1.3.10</struts.version>
 		<log4j.version>1.2.17</log4j.version>
+		<version.war.plugin>2.1.1</version.war.plugin>
+		<version.jboss.maven.plugin>7.4.Final</version.jboss.maven.plugin>
 	</properties>
   
   <dependencies>
@@ -154,6 +156,11 @@
 		<artifactId>asm</artifactId>
 		<version>3.3.1</version>
 	</dependency>
+	<dependency>
+        <groupId>org.drools</groupId>
+        <artifactId>drools-compiler</artifactId>
+        <version>4.0.7</version>
+    </dependency>
   </dependencies>
   <build>
     <finalName>WebInventory</finalName>
@@ -162,6 +169,21 @@
 		  <groupId>org.eclipse.jetty</groupId>
 		  <artifactId>jetty-maven-plugin</artifactId>
 		</plugin>
+		<plugin>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>${version.war.plugin}</version>
+                <configuration>
+                    <!-- Java EE 6 doesn't require web.xml, Maven needs to 
+                        catch up! -->
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                </configuration>
+            </plugin>
+            <!-- JBoss AS plugin to deploy war -->
+            <plugin>
+                <groupId>org.jboss.as.plugins</groupId>
+                <artifactId>jboss-as-maven-plugin</artifactId>
+                <version>${version.jboss.maven.plugin}</version>
+            </plugin>
     </plugins>
   </build>
 </project>

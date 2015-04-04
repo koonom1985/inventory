@@ -10,6 +10,7 @@
 		<meta charset="utf-8">
         <title>Sell Item</title>
         <link rel="stylesheet" href="./jquery-ui.css">
+        <link rel="stylesheet" type="text/css" href="./bootstrap.min.css" />
 		<script src="./jquery.js"></script>
 		<script src="./jquery-ui.js"></script>
 		<script>
