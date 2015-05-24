@@ -186,8 +186,6 @@
 			<configuration>
 				<url>http://localhost:8080/manager/text</url>
 				<server>tomcat</server>
-				<username>tomcat</username>
-				<password>China2020</password>
 				<path>/${finalName}</path>
 			</configuration>
 		</plugin>
