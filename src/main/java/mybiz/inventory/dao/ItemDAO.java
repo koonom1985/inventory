@@ -50,6 +50,16 @@ public class ItemDAO extends HibernateDaoSupport {
 			new Object[]{itemin});
 	}
 	
+	public Long findAllItemSellTotalSoldSizeByItemInId(ItemIn itemin) {
+		List<Integer> results = getHibernateTemplate().find(
+			"select sellSiez from ItemSell t where t.itemIn=?", 
+			new Object[]{itemin});
+		if (!results.isEmpty()) {
+			return results.get(0).longValue();
+		}
+		return new Long(0);
+	}
+	
 	public List<ItemIn> findItemInByIndex(int start, int end) {
 		return getHibernateTemplate().find(
 			"from ItemIn t where t.itemInId=? and t.itemInId=?", 

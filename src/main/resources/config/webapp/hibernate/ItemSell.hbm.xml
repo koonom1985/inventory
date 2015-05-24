@@ -8,6 +8,9 @@
             <column name="ITEM_SELL_ID" />
             <generator class="identity" />
         </id>
+        <property name="orderId" type="long">
+            <column name="ORDER_ID" />
+        </property>
         <many-to-one name="itemIn" class="mybiz.inventory.model.ItemIn" fetch="select">
         	<column name="ITEM_SELL_ITEM_IN_ID" not-null="true"/>
         </many-to-one>

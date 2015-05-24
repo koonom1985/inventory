@@ -36,6 +36,10 @@ public class ItemService {
 		return itemDAO.findAllItemSellByItemInId(itemin);
 	}
 	
+	public Long findAllItemSellTotalSoldSizeByItemInId(ItemIn itemin) {
+		return itemDAO.findAllItemSellTotalSoldSizeByItemInId(itemin);
+	}
+	
 	public List<ItemIn> findItemInById(long id) {
 		return itemDAO.findItemInById(id);
 	}

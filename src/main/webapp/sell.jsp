@@ -47,7 +47,7 @@
     	</div>
     	
     	<div align="center">
-    	<fieldset  style="width: 60%;">
+    	<fieldset  style="width: 70%;">
     	<legend> <fmt:message key="title.sell.item"/> </legend>
     	<html:form action="/sell">
     	<table border="0" >
@@ -59,8 +59,6 @@
     		<td><fmt:message key="label.sell.time"/> : </td>
     		<td><html:text property="itemSell.sellDatetime" value=""/></td>
     		<td><fmt:message key="label.sell.address"/> : </td><td><html:text property="itemSell.sellAddress" value=""/></td>
-    	</tr>
-    	<tr>
     		<td><fmt:message key="label.sell.telephone"/> : </td><td><html:text property="itemSell.sellTelphone" value=""/></td>
     	</tr>
     	<tr>
@@ -93,7 +91,7 @@
     	<display:column property="sellAddress" titleKey="label.sell.address" sortable="true"/>
     	<display:column property="sellTelphone" titleKey="label.sell.telephone" sortable="true"/>
     	<display:column titleKey="label.common.button.update" sortable="false">
-    		<html:link action="/update.do" paramName="selldata" paramId="id" paramProperty="itemSellId">
+    		<html:link action="/updateSell.do" paramName="selldata" paramId="id" paramProperty="itemSellId">
     			<fmt:message key="label.common.button.update"/>
     		</html:link>
     	</display:column>

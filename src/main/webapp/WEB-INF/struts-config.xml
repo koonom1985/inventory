@@ -9,6 +9,7 @@
         <form-bean name="listForm" type="mybiz.inventory.struts.form.ListForm" />
         <form-bean name="addForm" type="mybiz.inventory.struts.form.AddForm" />
         <form-bean name="updateForm" type="mybiz.inventory.struts.form.UpdateForm" />
+        <form-bean name="updateSellForm" type="mybiz.inventory.struts.form.UpdateSellForm" />
         <form-bean name="sellForm" type="mybiz.inventory.struts.form.SellForm" />
         <form-bean name="sellMutipleForm" type="mybiz.inventory.struts.form.SellMutipleForm" />
     </form-beans>
@@ -29,6 +30,11 @@
         </action>
         <action name="updateForm" path="/update" cancellable="true"
         	type="mybiz.inventory.struts.action.UpdateAction" scope="request">
+        	<forward name="update" path="/update.jsp" redirect="false" />
+        	<forward name="cancelled" path="/list.do" redirect="true" />
+        </action>
+        <action name="updateForm" path="/updateSell" cancellable="true"
+        	type="mybiz.inventory.struts.action.UpdateSellAction" scope="request">
         	<forward name="update" path="/update.jsp" redirect="false" />
         	<forward name="cancelled" path="/list.do" redirect="true" />
         </action>

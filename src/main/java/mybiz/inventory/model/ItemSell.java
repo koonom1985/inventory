@@ -19,6 +19,8 @@ public class ItemSell implements java.io.Serializable {
 	private String sellAddress;
 	private BigDecimal sellTelphone;
 	
+	private long orderId;
+	
 	private ItemIn itemIn;
 
 	public ItemSell() {
@@ -102,6 +104,14 @@ public class ItemSell implements java.io.Serializable {
 
 	public void setItemIn(ItemIn itemIn) {
 		this.itemIn = itemIn;
+	}
+
+	public Long getOrderId() {
+		return orderId;
+	}
+
+	public void setOrderId(Long orderId) {
+		this.orderId = orderId;
 	}
 
 }
