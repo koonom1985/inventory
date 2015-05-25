@@ -198,7 +198,10 @@
                 <password>app</password>
                 <driver>org.apache.derby.jdbc.ClientDriver</driver>
                 <url>jdbc:derby://localhost:1527//Users/john/workspace/j2ee/derbydatabase;</url>
-                <baseDir>db/migration</baseDir>
+                <locations>
+                    <location>db/migration</location>
+                </locations>
+                <encoding>UTF-8</encoding>
             </configuration>
         </plugin>
     </plugins>
