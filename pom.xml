@@ -190,16 +190,16 @@
 			</configuration>
 		</plugin>
         <plugin>
-            <groupId>com.googlecode.flyway</groupId>
+            <groupId>org.flywaydb</groupId>
             <artifactId>flyway-maven-plugin</artifactId>
-            <version>2.1.1</version>
+            <version>3.2.1</version>
             <configuration>
                 <user>app</user>
                 <password>app</password>
                 <driver>org.apache.derby.jdbc.ClientDriver</driver>
                 <url>jdbc:derby://localhost:1527//Users/john/workspace/j2ee/derbydatabase;</url>
                 <locations>
-                    <location>db/migration</location>
+                    <location>classpath:db/migration</location>
                 </locations>
                 <encoding>UTF-8</encoding>
             </configuration>
