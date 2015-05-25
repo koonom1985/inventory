@@ -197,7 +197,7 @@
                 <user>app</user>
                 <password>app</password>
                 <driver>org.apache.derby.jdbc.ClientDriver</driver>
-                <url>jdbc:derby://localhost:1527//Users/john/workspace/j2ee/derbydatabase;</url>
+                <url>jdbc:derby://localhost:1527//home/derby/workspace/j2ee/derbydatabase;create=true</url>
                 <locations>
                     <location>classpath:db/migration</location>
                 </locations>
