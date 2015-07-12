@@ -96,7 +96,8 @@
     		</html:link>
     	</display:column>
     	<display:column titleKey="label.common.button.delete" sortable="false">
-    		<html:link action="/deleteSell.do" paramName="selldata" paramId="id" paramProperty="itemSellId">
+    		<html:link action="/deleteSell.do" paramName="selldata" paramId="id" paramProperty="itemSellId"
+					   onclick="if(confirm('Are you sure?')==false)return false;">
     			<fmt:message key="label.common.button.delete"/>
     		</html:link>
     	</display:column>
