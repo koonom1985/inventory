@@ -26,6 +26,7 @@
         </action>
         <action name="addForm" path="/add"
         	type="mybiz.inventory.struts.action.AddAction" scope="request">
+            <set-property property = "cancellable" value = "true" />
         	<forward name="list" path="/list.do" redirect="true" />
         </action>
         <action name="updateForm" path="/update" cancellable="true"

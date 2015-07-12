@@ -24,6 +24,9 @@ public class AddAction extends Action {
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
+		if (isCancelled(request)) {
+			return mapping.findForward("list");
+		}
 		AddForm addForm = (AddForm)form;
 		logger.info("addForm::Itemin::"+addForm.getItemIn());
 		if ( addForm.getItemIn() != null ) {
