@@ -6,7 +6,7 @@
     <class name="mybiz.inventory.model.ItemIn" table="ITEM_IN">
         <id name="itemInId" type="long">
             <column name="ITEM_IN_ID" />
-            <generator class="identity" />
+            <generator class="increment" />
         </id>
         <property name="code" type="string">
             <column name="CODE" length="20" />

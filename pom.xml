@@ -14,6 +14,7 @@
 		<version.war.plugin>2.1.1</version.war.plugin>
 		<version.jboss.maven.plugin>7.4.Final</version.jboss.maven.plugin>
 		<finalName>inventory</finalName>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
   
   <dependencies>
